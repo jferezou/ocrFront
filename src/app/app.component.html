@@ -1,0 +1,10 @@
+<div ng-app="myApp" ng-controller="customersCtrl"> 
+<pdf-viewer src="https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf"></pdf-viewer>
+<ul>
+	<li *ngFor="let item of results.resultats">
+		{{ item.pdfFilePath }}
+	</li>
+</ul>
+
+</div>
+
