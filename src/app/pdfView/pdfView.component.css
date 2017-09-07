@@ -10,10 +10,15 @@
     vertical-align: top;
 }
 .gauche {
-    width:40%; 
+    width:60%; 
 	float:left;
 }
  
 .droite {
-    width: 60%;
+    width: 40%;
+}
+.divWithScroll {
+    height:700px;
+    overflow:scroll;
+    overflow-x:hidden;
 }

@@ -4,20 +4,22 @@
 		<br/>
 		Echantillon :
 		<input type="text" name="echantillon" value="{{currentItem.echantillon}}" class="echantillon">
+		<br/>
+		<br/>
 		<table style="width:60%">
 			<tr>
 				<th>Nom</th>
 				<th>Pourcentage</th> 
 				<th>Dominant</th>
 				<th>Accompagnement</th>
-				<th> lgh</th>
-			</tr>
-			<tr *ngFor="let composition of currentItem.compositions">
-				<compositionview [composition]="composition"></compositionview>
-			</tr>
+				<th>Isolé</th>
+			</tr>			
+		  <tbody compositionview *ngFor="let composition of currentItem.compositions"
+			[composition]='composition'
+		  >
 		</table>
 	</div>
-	<div class="gauche">
-		<pdf-viewer src="http://localhost:8089/ocr/services/rest/traitement/getpdf?pdfName={{currentItem.pdfFileName}}"></pdf-viewer>
+	<div class="gauche divWithScroll">
+		<pdf-viewer src="http://localhost:8089/ocr/services/rest/traitement/getpdf?pdfName={{currentItem.pdfFileName}}" zoom="1.3"></pdf-viewer>
 	</div>
 </div>
