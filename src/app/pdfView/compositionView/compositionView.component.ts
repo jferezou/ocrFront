@@ -15,6 +15,7 @@ export class CompositionViewComponent implements OnInit{
   isoleIsChecked = false;
   isvalid=false;
   ngOnInit(): void {
+	this.isvalid=this.composition.valid;
     if(this.composition.type === 'Dominant') {
 		this.dominantIsChecked=true;
 	}
