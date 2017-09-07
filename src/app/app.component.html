@@ -1,10 +1,10 @@
 <div ng-app="myApp" ng-controller="customersCtrl"> 
-<pdf-viewer src="http://localhost:8080/traitement/getpdf?pdfName=170703171333_0001_2.pdf"></pdf-viewer>
-<ul>
-	<li *ngFor="let item of results.resultats">
-		{{ item.pdfFilePath }}
-	</li>
-</ul>
+	<select [(ngModel)]="selectedPdf" size="10" (change)="onChange($event)">
+		<option *ngFor="let item of resultat.resultats" [value]="item.id">
+			{{ item.pdfFilePath }}
+		</option>
+	</select>
 
+		<mypdfview [currentItem]="currentItem"></mypdfview>
 </div>
 

@@ -1,0 +1,4 @@
+
+<div *ngIf="currentItem !== undefined">
+	<pdf-viewer src="http://localhost:8089/ocr/services/rest/traitement/getpdf?pdfName={{currentItem.pdfFileName}}"></pdf-viewer>
+</div>
