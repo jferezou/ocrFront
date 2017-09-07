@@ -8,10 +8,11 @@ import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { AppComponent } from './app.component';
 import { ResultatService } from './resultat.service';
 import { PdfViewComponent } from './pdfView/pdfView.component';
+import { CompositionViewComponent } from './pdfView/compositionView/compositionView.component';
 
 @NgModule({
   declarations: [
-    AppComponent, PdfViewerComponent, PdfViewComponent
+    AppComponent, PdfViewerComponent, PdfViewComponent, CompositionViewComponent
   ],
   imports: [
     BrowserModule,

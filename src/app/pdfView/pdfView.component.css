@@ -1,0 +1,19 @@
+.echantillon {
+    width: 300px;
+}
+
+.global{
+  width:100%;
+}
+.droite, .gauche {
+    display: inline-block;
+    vertical-align: top;
+}
+.gauche {
+    width:40%; 
+	float:left;
+}
+ 
+.droite {
+    width: 60%;
+}

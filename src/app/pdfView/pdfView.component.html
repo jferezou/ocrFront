@@ -1,4 +1,23 @@
-
+<br/>
 <div *ngIf="currentItem !== undefined">
-	<pdf-viewer src="http://localhost:8089/ocr/services/rest/traitement/getpdf?pdfName={{currentItem.pdfFileName}}"></pdf-viewer>
+	<div class="droite">
+		<br/>
+		Echantillon :
+		<input type="text" name="echantillon" value="{{currentItem.echantillon}}" class="echantillon">
+		<table style="width:60%">
+			<tr>
+				<th>Nom</th>
+				<th>Pourcentage</th> 
+				<th>Dominant</th>
+				<th>Accompagnement</th>
+				<th> lgh</th>
+			</tr>
+			<tr *ngFor="let composition of currentItem.compositions">
+				<compositionview [composition]="composition"></compositionview>
+			</tr>
+		</table>
+	</div>
+	<div class="gauche">
+		<pdf-viewer src="http://localhost:8089/ocr/services/rest/traitement/getpdf?pdfName={{currentItem.pdfFileName}}"></pdf-viewer>
+	</div>
 </div>
