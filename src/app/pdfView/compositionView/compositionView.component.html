@@ -1,17 +1,17 @@
 <tr>
 	<td>
-		<input type="text" name="nomcomposition" value="{{composition.value}}" [ngClass]="{'rouge' : isvalid === false}">
+		<input type="text" name="nomcomposition" ngModel="{{composition.value}}" #nomcomposition="ngModel" [id]="'nomcomposition' + index" [ngClass]="{'rouge' : isvalid === false}"/>
 	</td>
 	<td>
-		<input type="text" name="pourcentage" value="{{composition.percentage}}" class="percentage">		
+		<input type="text" name="pourcentage" ngModel="{{composition.percentage}}" #pourcentage="ngModel" [id]="'pourcentage' + index" class="percentage"/>		
 	</td>
 	<td align="center">
-		<input type="radio" name="gender{{composition.value}}" value="dominant" [checked]="dominantIsChecked">
+		<input type="radio" name="type{{index}}" ngModel="{{dominantIsChecked}}" #dominant="ngModel" [id]="'dominant' + index" [checked]="dominantIsChecked"/>
 	</td>
 	<td align="center">
-		<input type="radio" name="gender{{composition.value}}" value="accompagnement" [checked]="accompagnementIsChecked">
+		<input type="radio" name="type{{index}}" ngModel="{{accompagnementIsChecked}}" #accompagnement="ngModel" [id]="'accompagnement' + index" [checked]="accompagnementIsChecked"/>
 	</td>
 	<td align="center">
-		<input type="radio" name="gender{{composition.value}}" value="isole" [checked]="isoleIsChecked">
+		<input type="radio" name="type{{index}}" ngModel="{{isoleIsChecked}}" #isole="ngModel" [id]="'isole' + index" [checked]="isoleIsChecked"/>
 	</td>	
 </tr>

@@ -22,3 +22,16 @@
     overflow:scroll;
     overflow-x:hidden;
 }
+
+.myButton {
+	text-align: center;
+}
+.percentage {
+    width: 100px;
+}
+.centrer {
+    text-align: center;
+}
+.rouge{
+	color: red;
+}

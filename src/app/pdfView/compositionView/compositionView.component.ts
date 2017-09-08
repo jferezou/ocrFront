@@ -10,6 +10,7 @@ import {OnInit} from '@angular/core';
 })
 export class CompositionViewComponent implements OnInit{
   @Input() composition;
+  @Input() index;
   dominantIsChecked = false;
   accompagnementIsChecked = false;
   isoleIsChecked = false;
