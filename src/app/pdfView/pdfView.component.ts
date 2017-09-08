@@ -24,7 +24,6 @@ export class PdfViewComponent implements OnChanges {
 		const body = JSON.stringify(f.value); 
 		var headers = new Headers();
 		headers.append('Content-Type', 'application/json');
-		headers.append('Access-Control-Allow-Origin', '*');
 		this.http.post(this.saveUrl, body,{headers: headers}).subscribe(r=>{});;
 	}
 }
