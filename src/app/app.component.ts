@@ -12,21 +12,12 @@ import { ResultatService } from './resultat.service';
 })
 
 export class AppComponent implements OnInit {
-	//resultatBooks: Promise<String>
-	//   resultat: String;
-	//   errorMessage: String;
-	//   constructor(private ResultatService: ResultatService) { }
-	//   ngOnInit(): void {
-	//	this.resultatBooks = this.ResultatService.getResultatWithPromise();
-	//	this.resultatBooks.then(
-	//		   resultatValue => this.resultat = resultatValue,
-	//		   error =>  this.errorMessage = <any>error);
-	//   }
   title = 'app';
   private apiUrl ="http://localhost:8089/ocr/services/rest/traitement/t1";
   resultat;
   currentItem;
   selectedPdf;
+  private focused : boolean;
   constructor(private http: Http) {}
   
   ngOnInit(): void {
@@ -48,5 +39,8 @@ export class AppComponent implements OnInit {
 		  }
 			i++;
 		}
+  }
+  passerVert(evt){
+    this.currentItem.enregistre = true;
   }
 }
