@@ -20,7 +20,7 @@
 				  <tbody>
 					<tr *ngFor="let composition of currentItem.compositions; let i = index;">
 						<td>
-							<input type="text" name="nomcomposition{{i}}" ngModel="{{composition.value}}" #nomcomposition="ngModel" [id]="'nomcomposition' + i" [ngClass]="{'rouge' : isvalid === false}"/>
+							<input type="text" name="nomcomposition{{i}}" ngModel="{{composition.value}}" #nomcomposition="ngModel" [id]="'nomcomposition' + i" [ngClass]="{'rouge' : composition.valid === false}"/>
 						</td>
 						<td>
 							<input type="text" name="pourcentage{{i}}" ngModel="{{composition.percentage}}" #pourcentage="ngModel" [id]="'pourcentage' + i" class="percentage"/>		
