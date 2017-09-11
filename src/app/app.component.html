@@ -16,6 +16,17 @@
 	</div>
 </div>
 <div *ngIf="resultat === undefined">
+	<br/>
+	<br/>
+	<br/>
+	<br/>
 	Traitement en cours ...
+	<br/>
+	<br/>
+	<div *ngIf="estimateTime !== undefined">
+		Temps estimé : {{ estimateTime }} min
+		<br/>
+		Heure de fin estimée : {{ estimateDate }}
+	</div>
 </div>
 

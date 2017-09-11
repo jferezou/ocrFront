@@ -15,9 +15,12 @@ export class AppComponent implements OnInit {
   title = 'app';
   private apiUrl ="http://localhost:8089/ocr/services/rest/traitement/t1";
   csvUrl ="http://localhost:8089/ocr/services/rest/traitement/getcsv";
+  estimateTimeUrl ="http://localhost:8089/ocr/services/rest/traitement/estimatetime";
   resultat;
   currentItem;
   selectedPdf;
+  estimateTime;
+  estimateDate;
   private focused : boolean;
   constructor(private http: Http) {}
   
@@ -28,6 +31,13 @@ export class AppComponent implements OnInit {
       this.resultat = data.json();
 	  this.currentItem = undefined;
     });
+	
+    this.http.get(this.estimateTimeUrl).subscribe(data => {
+      // Read the result field from the JSON response.
+      this.estimateTime = data.json().minutes;
+	  this.estimateDate = data.json().estimatedDate;
+    });
+	
   }
   private onChange(newValue) {
 	  var index = parseInt(this.selectedPdf);
