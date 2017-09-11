@@ -14,6 +14,7 @@ import { ResultatService } from './resultat.service';
 export class AppComponent implements OnInit {
   title = 'app';
   private apiUrl ="http://localhost:8089/ocr/services/rest/traitement/t1";
+  csvUrl ="http://localhost:8089/ocr/services/rest/traitement/getcsv";
   resultat;
   currentItem;
   selectedPdf;
@@ -42,5 +43,8 @@ export class AppComponent implements OnInit {
   }
   passerVert(evt){
     this.currentItem.enregistre = true;
+  }
+  exporterCsv(event) {
+    this.http.get(this.csvUrl).subscribe(data => {});
   }
 }
