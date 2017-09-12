@@ -1,0 +1,59 @@
+<br/>
+<div *ngIf="currentItem !== undefined">
+	<div class="droite">
+		<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+			<br/>
+			<div>
+				<input type="hidden" #id="ngModel" id="enchatillon" name="id" ngModel="{{currentItem.id}}" />
+				Référence :
+				<input type="text" #enchatillon="ngModel" id="reference" name="reference" ngModel="{{currentItem.reference}}" class="echantillon"/>
+				<br/>
+				<br/>
+				GMS
+				<table style="width:60%">
+					<tr>
+						<th>Nom</th>
+						<th>Pourcentage</th> 
+					</tr>			
+				  <tbody>
+					<tr *ngFor="let composition of currentItem.gmsList; let i = index;">
+						<td>
+							<input type="text" name="valuegms{{i}}" ngModel="{{composition.value}}" #value="ngModel" [id]="'valuegms' + i" [ngClass]="{'bleu' : composition.trace === true, 'texte' : true}"/>
+						</td>
+						<td>
+							<input type="text" name="pourcentagegms{{i}}" ngModel="{{composition.pourcentage}}" #pourcentage="ngModel" [id]="'pourcentagegms' + i" class="percentage"/>		
+						</td>
+					</tr>
+					</tbody>
+				</table>
+				<br/>
+				<br/>
+				LMS
+				<table style="width:60%">
+					<tr>
+						<th>Nom</th>
+						<th>Pourcentage</th> 
+					</tr>			
+				  <tbody>
+					<tr *ngFor="let composition of currentItem.lmsList; let i = index;">
+						<td>
+							<input type="text" name="valuelms{{i}}" ngModel="{{composition.value}}" #value="ngModel" [id]="'valuelms' + i" [ngClass]="{'bleu' : composition.trace === true, 'texte' : true}"/>
+						</td>
+						<td>
+							<input type="text" name="pourcentagelms{{i}}" ngModel="{{composition.pourcentage}}" #pourcentage="ngModel" [id]="'pourcentagelms' + i" class="percentage"/>		
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<br/>
+			<br/>
+			<div class="myButton">
+				<button type="submit">Enregistrer</button>
+			</div>
+		</form>
+	</div>
+	<div class="gauche divWithScroll">
+		<pdf-viewer src="http://localhost:8089/ocr/services/rest/traitement/getpdf?pdfName={{currentItem.pdfName}}" zoom="1.3" show-all="true"></pdf-viewer>
+	</div>
+</div>

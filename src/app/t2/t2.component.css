@@ -1,0 +1,19 @@
+.vert{
+	color: limegreen;	
+}
+
+.gaucheApp {
+    display:inline-block;
+}
+ 
+
+.droiteApp {
+	margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+}
+
+.globalApp{
+  width:100%;
+  display:flex;
+}

@@ -1,32 +1,6 @@
-<div *ngIf="resultat !== undefined" ng-app="myApp" ng-controller="customersCtrl"> 
-	<div class="globalApp">
-		<div class ="gaucheApp">
-			<select [(ngModel)]="selectedPdf" size="10" (change)="onChange($event)">
-				<option *ngFor="let item of resultat.resultats" [value]="item.id" [ngClass]="{'vert': item.enregistre==true}">
-					{{ item.pdfFilePath }}
-				</option>
-			</select>
-		</div>	
-		<div class="droiteApp">
-			<a href="{{csvUrl}}">Exporter CSV</a>
-		</div>
-	</div>
-	<div class="global">
-		<mypdfview [currentItem]="currentItem" (validateEnregistrer)="passerVert($event)"></mypdfview>
-	</div>
-</div>
-<div *ngIf="resultat === undefined">
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	Traitement en cours ...
-	<br/>
-	<br/>
-	<div *ngIf="estimateTime !== undefined">
-		Temps estimé : {{ estimateTime }} min
-		<br/>
-		Heure de fin estimée : {{ estimateDate }}
-	</div>
-</div>
-
+  <nav>
+    <a routerLink="/traitementT1" routerLinkActive="active">Traitement 1</a>
+    <a routerLink="/traitementT2" routerLinkActive="active">Traitement 2</a>
+  </nav>
+  <br/>
+  <router-outlet></router-outlet>
