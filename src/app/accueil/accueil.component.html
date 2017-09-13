@@ -4,7 +4,10 @@
   </nav>
   <br/>
   <router-outlet></router-outlet>
+  <button [routerLink]="['traitementT1', listefichiers]">{{myConfig.boutontraitement1}}</button>
+  <button [routerLink]="['traitementT2', listefichiers]">{{myConfig.boutontraitement2}}</button>
   -->
-  <input name="monFichier" type="file" multiple>
-  <button [routerLink]="['traitementT1']">{{myConfig.boutontraitement1}}</button>
-  <button [routerLink]="['traitementT2']">{{myConfig.boutontraitement2}}</button>
+  <input (change)="onFileChange($event)" type="file" webkitdirectory directory multiple>
+  <button (click)="navigatet1()">{{myConfig.boutontraitement1}}</button>
+  <button (click)="navigatet2()">{{myConfig.boutontraitement2}}</button>
+  

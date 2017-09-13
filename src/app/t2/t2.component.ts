@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import {OnInit} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {config} from '../configuration';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   templateUrl: './t2.component.html',
@@ -17,9 +18,13 @@ export class T2Component implements OnInit {
   currentItem;
   selectedPdf;
   private focused : boolean;
-  constructor(private http: Http) {}
+  constructor(private http: Http, private route: ActivatedRoute) {}
   
   ngOnInit(): void {
+	  this.route.params.subscribe(params => {
+		console.log(params);
+	  });
+  
     // Make the HTTP request:
     this.http.get(this.apiUrl).subscribe(data => {
       // Read the result field from the JSON response.
