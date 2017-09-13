@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import {OnInit} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {config} from '../configuration';
@@ -22,15 +22,15 @@ export class T2Component implements OnInit {
   
   ngOnInit(): void {
 	  this.route.params.subscribe(params => {
-		console.log(params);
+		const body = Object.assign({}, params); 
+		var headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+		this.http.post(this.apiUrl, body,{headers: headers}).subscribe(data => {
+		  // Read the result field from the JSON response.
+		  this.resultat = data.json();
+		  this.currentItem = undefined;
+		});	
 	  });
-  
-    // Make the HTTP request:
-    this.http.get(this.apiUrl).subscribe(data => {
-      // Read the result field from the JSON response.
-      this.resultat = data.json();
-	  this.currentItem = undefined;
-    });	
   }
   private onChange(newValue) {
 	  var index = parseInt(this.selectedPdf);

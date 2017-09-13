@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import {OnInit} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {config} from '../configuration';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   templateUrl: './t1.component.html',
@@ -21,15 +22,20 @@ export class T1Component implements OnInit {
   estimateTime;
   estimateDate;
   private focused : boolean;
-  constructor(private http: Http) {}
+  constructor(private http: Http, private route: ActivatedRoute) {}
   
   ngOnInit(): void {
-    // Make the HTTP request:
-    this.http.get(this.apiUrl).subscribe(data => {
-      // Read the result field from the JSON response.
-      this.resultat = data.json();
-	  this.currentItem = undefined;
-    });
+	   this.route.params.subscribe(params => {
+		const body = JSON.stringify(params); 
+		var headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+		this.http.post(this.apiUrl, body,{headers: headers}).subscribe(data => {
+		  // Read the result field from the JSON response.
+		  this.resultat = data.json();
+		  this.currentItem = undefined;
+		});	
+	  });
+   
 	
     this.http.get(this.estimateTimeUrl).subscribe(data => {
       // Read the result field from the JSON response.
