@@ -9,7 +9,6 @@ import 'rxjs/add/operator/map';
 })
 
 export class T2Component implements OnInit {
-  title = 'app';
   private apiUrl ="http://localhost:8089/ocr/services/rest/traitement/t2";
   csvUrl ="http://localhost:8089/ocr/services/rest/traitement/getcsvt2";
   resultat;

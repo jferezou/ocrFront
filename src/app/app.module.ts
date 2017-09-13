@@ -5,23 +5,24 @@ import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 
-import { T1Component } from './t1.component';
+import { T1Component } from './t1/t1.component';
 import { T2Component } from './t2/t2.component';
+import { Accueil } from './accueil/accueil.component';
 import { AppComponent } from './app.component';
 import { ResultatService } from './resultat.service';
-import { PdfViewComponent } from './pdfView/pdfView.component';
+import { PdfViewComponent } from './t1/pdfView/pdfView.component';
 import { PdfViewComponentT2 } from './t2/pdfView/pdfView.component';
-import { CompositionViewComponent } from './pdfView/compositionView/compositionView.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
+  { path: '', component: Accueil },
   { path: 'traitementT1', component: T1Component },
   { path: 'traitementT2', component: T2Component },
  ];
 
 @NgModule({
   declarations: [
-    AppComponent, PdfViewerComponent, PdfViewComponent, PdfViewComponentT2, CompositionViewComponent, T1Component, T2Component
+    AppComponent, PdfViewerComponent, PdfViewComponent, PdfViewComponentT2, T1Component, T2Component, Accueil
   ],
   imports: [
   RouterModule.forRoot(
