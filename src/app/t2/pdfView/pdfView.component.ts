@@ -12,7 +12,7 @@ export class PdfViewComponentT2 implements OnChanges {
 	@Input() currentItem: string;
 	@Output() validateEnregistrer : EventEmitter<boolean> = new EventEmitter<boolean>();
   
-	private saveUrl ="http://localhost:8089/ocr/services/rest/traitement/save";
+	private saveUrl ="http://localhost:8089/ocr/services/rest/traitement/savet2";
   constructor(private http: Http) {}
 
   ngOnChanges(changes: SimpleChanges) {
