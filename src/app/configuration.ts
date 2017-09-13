@@ -10,7 +10,7 @@
   traitementencours: "Traitement en cours ...",
   tempsestime: "Temps estimé",
   dateestime: "Heure de fin estimée",
-  enregistrer: "Enregistrer",
+  enregistrer: "Valider",
   nom: "Nom",
   pourcentage: "Pourcentage",
   dominant: "Dominant",
@@ -18,6 +18,6 @@
   isole: "Isolé",
   echantillon: "Echantillon",
   reference: "Référence",
-  gms: "GMS",
-  lms: "LMS"
+  gms: "GMS - GC-MSMS - Primoris accredited",
+  lms: "LMS - LC-MSMS - Primoris accredited"
 }

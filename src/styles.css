@@ -32,12 +32,13 @@
     vertical-align: top;
 }
 .gauche {
-    width:60%; 
+    width:50%; 
 	float:left;
 }
  
 .droite {
-    width: 40%;
+	width: 40%;
+    margin-left: 5%;
 }
 .divWithScroll {
     height:700px;
