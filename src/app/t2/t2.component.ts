@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import {OnInit} from '@angular/core';
 import 'rxjs/add/operator/map';
+import {config} from '../configuration';
 
 @Component({
   templateUrl: './t2.component.html',
@@ -9,13 +10,12 @@ import 'rxjs/add/operator/map';
 })
 
 export class T2Component implements OnInit {
-  private apiUrl ="http://localhost:8089/ocr/services/rest/traitement/t2";
-  csvUrl ="http://localhost:8089/ocr/services/rest/traitement/getcsvt2";
+  myConfig = config;
+  private apiUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/t2";
+  csvUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/getcsvt2";
   resultat;
   currentItem;
   selectedPdf;
-  estimateTime;
-  estimateDate;
   private focused : boolean;
   constructor(private http: Http) {}
   

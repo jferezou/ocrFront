@@ -1,3 +1,4 @@
+<button [routerLink]="['']" class="accueilbouton"> Retour accueil</button>
 <div *ngIf="resultat !== undefined" ng-app="myApp" ng-controller="customersCtrl"> 
 	<div class="globalApp">
 		<div class ="gaucheApp">
@@ -8,7 +9,7 @@
 			</select>
 		</div>	
 		<div class="droiteApp">
-			<a href="{{csvUrl}}">Exporter CSV</a>
+			<a href="{{csvUrl}}">{{myConfig.exportercsv}}</a>
 		</div>
 	</div>
 	<div class="global">
@@ -20,13 +21,6 @@
 	<br/>
 	<br/>
 	<br/>
-	Traitement en cours ...
-	<br/>
-	<br/>
-	<div *ngIf="estimateTime !== undefined">
-		Temps estimé : {{ estimateTime }} min
-		<br/>
-		Heure de fin estimée : {{ estimateDate }}
-	</div>
+	{{myConfig.traitementencours}}
 </div>
 

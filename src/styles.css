@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+.accueilbouton{
+	margin: 20px;
+}
+.vert{
+	color: limegreen;	
+}
+
+.gaucheApp {
+    display:inline-block;
+}
+ 
+
+.droiteApp {
+	margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+}
+
+.globalApp{
+  width:100%;
+  display:flex;
+}.echantillon {
+    width: 300px;
+}
+
+.global{
+  width:100%;
+}
+.droite, .gauche {
+    display: inline-block;
+    vertical-align: top;
+}
+.gauche {
+    width:60%; 
+	float:left;
+}
+ 
+.droite {
+    width: 40%;
+}
+.divWithScroll {
+    height:700px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+
+.myButton {
+	text-align: center;
+}
+.percentage {
+    width: 100px;
+}
+.centrer {
+    text-align: center;
+}
+.texte{
+	width: 500px;
+}
+
+.bleu{
+	color: DarkBlue ;
+}

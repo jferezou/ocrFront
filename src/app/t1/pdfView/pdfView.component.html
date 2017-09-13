@@ -5,17 +5,17 @@
 			<br/>
 			<div>
 				<input type="hidden" #id="ngModel" id="enchatillon" name="id" ngModel="{{currentItem.id}}" />
-				Echantillon :
+				{{myConfig.echantillon}} :
 				<input type="text" #enchatillon="ngModel" id="enchatillon" name="echantillon" ngModel="{{currentItem.echantillon}}" class="echantillon"/>
 				<br/>
 				<br/>
 				<table style="width:60%">
 					<tr>
-						<th>Nom</th>
-						<th>Pourcentage</th> 
-						<th>Dominant</th>
-						<th>Accompagnement</th>
-						<th>Isolé</th>
+						<th>{{myConfig.nom}}</th>
+						<th>{{myConfig.pourcentage}}</th> 
+						<th>{{myConfig.dominant}}</th>
+						<th>{{myConfig.accompagnement}}</th>
+						<th>{{myConfig.isole}}</th>
 					</tr>			
 				  <tbody>
 					<tr *ngFor="let composition of currentItem.compositions; let i = index;">
@@ -41,7 +41,7 @@
 			<br/>
 			<br/>
 			<div class="myButton">
-				<button type="submit">Enregistrer</button>
+				<button type="submit">{{myConfig.enregistrer}}</button>
 			</div>
 		</form>
 	</div>

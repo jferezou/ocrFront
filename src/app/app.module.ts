@@ -9,7 +9,6 @@ import { T1Component } from './t1/t1.component';
 import { T2Component } from './t2/t2.component';
 import { Accueil } from './accueil/accueil.component';
 import { AppComponent } from './app.component';
-import { ResultatService } from './resultat.service';
 import { PdfViewComponent } from './t1/pdfView/pdfView.component';
 import { PdfViewComponentT2 } from './t2/pdfView/pdfView.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -34,7 +33,6 @@ const appRoutes: Routes = [
     HttpModule,
     NgbModule
   ],
-  providers: [ResultatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

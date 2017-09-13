@@ -5,15 +5,15 @@
 			<br/>
 			<div>
 				<input type="hidden" #id="ngModel" id="enchatillon" name="id" ngModel="{{currentItem.id}}" />
-				Référence :
+				{{myConfig.reference}} :
 				<input type="text" #enchatillon="ngModel" id="reference" name="reference" ngModel="{{currentItem.reference}}" class="echantillon"/>
 				<br/>
 				<br/>
-				GMS
+				{{myConfig.gms}}
 				<table style="width:60%">
 					<tr>
-						<th>Nom</th>
-						<th>Pourcentage</th> 
+						<th>{{myConfig.nom}}</th>
+						<th>{{myConfig.pourcentage}}</th> 
 					</tr>			
 				  <tbody>
 					<tr *ngFor="let composition of currentItem.gmsList; let i = index;">
@@ -28,11 +28,11 @@
 				</table>
 				<br/>
 				<br/>
-				LMS
+				{{myConfig.lms}}
 				<table style="width:60%">
 					<tr>
-						<th>Nom</th>
-						<th>Pourcentage</th> 
+						<th>{{myConfig.nom}}</th>
+						<th>{{myConfig.pourcentage}}</th> 
 					</tr>			
 				  <tbody>
 					<tr *ngFor="let composition of currentItem.lmsList; let i = index;">
@@ -49,7 +49,7 @@
 			<br/>
 			<br/>
 			<div class="myButton">
-				<button type="submit">Enregistrer</button>
+				<button type="submit">{{myConfig.enregistrer}}</button>
 			</div>
 		</form>
 	</div>

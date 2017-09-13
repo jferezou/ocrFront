@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import {OnInit} from '@angular/core';
 import 'rxjs/add/operator/map';
+import {config} from '../configuration';
 
 @Component({
   templateUrl: './t1.component.html',
@@ -9,10 +10,11 @@ import 'rxjs/add/operator/map';
 })
 
 export class T1Component implements OnInit {
+  myConfig = config;
   title = 'app';
-  private apiUrl ="http://localhost:8089/ocr/services/rest/traitement/t1";
-  csvUrl ="http://localhost:8089/ocr/services/rest/traitement/getcsv";
-  estimateTimeUrl ="http://localhost:8089/ocr/services/rest/traitement/estimatetime";
+  private apiUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/t1";
+  csvUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/getcsv";
+  estimateTimeUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/estimatetime";
   resultat;
   currentItem;
   selectedPdf;

@@ -2,6 +2,7 @@
 import { Component, Input, Output, EventEmitter, ViewChildren, OnChanges, SimpleChanges } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Http, Response, Headers } from '@angular/http';
+import {config} from '../../configuration';
  
 @Component({
   selector: 'mypdfview',
@@ -11,6 +12,7 @@ import { Http, Response, Headers } from '@angular/http';
 export class PdfViewComponent implements OnChanges {
 	@Input() currentItem: string;
 	@Output() validateEnregistrer : EventEmitter<boolean> = new EventEmitter<boolean>();
+	myConfig = config;
   
 	private saveUrl ="http://localhost:8089/ocr/services/rest/traitement/save";
   constructor(private http: Http) {}
