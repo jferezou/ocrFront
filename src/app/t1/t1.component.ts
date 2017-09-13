@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import {OnInit} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {config} from '../configuration';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   templateUrl: './t1.component.html',
@@ -15,27 +14,22 @@ export class T1Component implements OnInit {
   title = 'app';
   private apiUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/t1";
   csvUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/getcsv";
-  estimateTimeUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/estimatetime";
+  estimateTimeUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/estimatetime?multiplicateur="+config.t1mult+"&ist1=true";
   resultat;
   currentItem;
   selectedPdf;
   estimateTime;
   estimateDate;
   private focused : boolean;
-  constructor(private http: Http, private route: ActivatedRoute) {}
+  constructor(private http: Http) {}
   
   ngOnInit(): void {
-	   this.route.params.subscribe(params => {
-		const body = JSON.stringify(params); 
-		var headers = new Headers();
-		headers.append('Content-Type', 'application/json');
-		this.http.post(this.apiUrl, body,{headers: headers}).subscribe(data => {
-		  // Read the result field from the JSON response.
-		  this.resultat = data.json();
-		  this.currentItem = undefined;
-		});	
-	  });
-   
+    // Make the HTTP request:
+    this.http.get(this.apiUrl).subscribe(data => {
+      // Read the result field from the JSON response.
+      this.resultat = data.json();
+	  this.currentItem = undefined;
+    });
 	
     this.http.get(this.estimateTimeUrl).subscribe(data => {
       // Read the result field from the JSON response.

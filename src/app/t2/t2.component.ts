@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import {OnInit} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {config} from '../configuration';
@@ -14,23 +14,32 @@ export class T2Component implements OnInit {
   myConfig = config;
   private apiUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/t2";
   csvUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/getcsvt2";
+  estimateTimeUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/estimatetime?multiplicateur="+config.t2mult+"&ist1=false";
   resultat;
   currentItem;
   selectedPdf;
+  estimateTime;
+  estimateDate;
   private focused : boolean;
   constructor(private http: Http, private route: ActivatedRoute) {}
   
   ngOnInit(): void {
 	  this.route.params.subscribe(params => {
-		const body = Object.assign({}, params); 
-		var headers = new Headers();
-		headers.append('Content-Type', 'application/json');
-		this.http.post(this.apiUrl, body,{headers: headers}).subscribe(data => {
-		  // Read the result field from the JSON response.
-		  this.resultat = data.json();
-		  this.currentItem = undefined;
-		});	
+		console.log(params);
 	  });
+  
+    // Make the HTTP request:
+    this.http.get(this.apiUrl).subscribe(data => {
+      // Read the result field from the JSON response.
+      this.resultat = data.json();
+	  this.currentItem = undefined;
+    });	
+	
+    this.http.get(this.estimateTimeUrl).subscribe(data => {
+      // Read the result field from the JSON response.
+      this.estimateTime = data.json().minutes;
+	  this.estimateDate = data.json().estimatedDate;
+    });
   }
   private onChange(newValue) {
 	  var index = parseInt(this.selectedPdf);

@@ -22,5 +22,12 @@
 	<br/>
 	<br/>
 	{{myConfig.traitementencours}}
+	<br/>
+	<br/>
+	<div *ngIf="estimateTime !== undefined">
+		{{myConfig.tempsestime}} : {{ estimateTime }} min
+		<br/>
+		{{myConfig.dateestime}} : {{ estimateDate }}
+	</div>
 </div>
 
