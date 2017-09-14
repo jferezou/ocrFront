@@ -9,30 +9,30 @@
 				<input type="text" #enchatillon="ngModel" id="enchatillon" name="echantillon" ngModel="{{currentItem.echantillon}}" class="echantillon"/>
 				<br/>
 				<br/>
-				<table style="width:60%">
+				<table style="width:100%">
 					<tr>
-						<th>{{myConfig.nom}}</th>
-						<th>{{myConfig.pourcentage}}</th> 
-						<th>{{myConfig.dominant}}</th>
-						<th>{{myConfig.accompagnement}}</th>
-						<th>{{myConfig.isole}}</th>
+						<th width="50%">{{myConfig.nom}}</th>
+						<th width="20%">{{myConfig.pourcentage}}</th> 
+						<th width="11%">{{myConfig.dominant}}</th>
+						<th width="13%">{{myConfig.accompagnement}}</th>
+						<th width="6%">{{myConfig.isole}}</th>
 					</tr>			
 				  <tbody>
 					<tr *ngFor="let composition of currentItem.compositions; let i = index;">
-						<td>
-							<input type="text" name="nomcomposition{{i}}" ngModel="{{composition.value}}" #nomcomposition="ngModel" [id]="'nomcomposition' + i" [ngClass]="{'rouge' : composition.valid === false}"/>
+						<td width="50%">
+							<input type="text" name="nomcomposition{{i}}" ngModel="{{composition.value}}" #nomcomposition="ngModel" [id]="'nomcomposition' + i" [ngClass]="{'rouge' : composition.valid === false,'width99' : true}"/>
 						</td>
-						<td>
-							<input type="text" name="pourcentage{{i}}" ngModel="{{composition.percentage}}" #pourcentage="ngModel" [id]="'pourcentage' + i" class="percentage"/>		
+						<td width="20%">
+							<input type="text" name="pourcentage{{i}}" ngModel="{{composition.percentage}}" #pourcentage="ngModel" [id]="'pourcentage' + i" class="width99"/>		
 						</td>
-						<td align="center">
-							<input type="radio" name="type{{i}}" ngModel="{{composition.type}}" value="Dominant" #dominant="ngModel" [id]="'dominant' + i" />
+						<td  width="11%"align="center">
+							<input type="radio" name="type{{i}}" ngModel="{{composition.type}}" value="Dominant" #dominant="ngModel" [id]="'dominant' + i"  class="width99" />
 						</td>
-						<td align="center">
-							<input type="radio" name="type{{i}}" ngModel="{{composition.type}}" value="Accompagnement" #accompagnement="ngModel" [id]="'accompagnement' + i"/>
+						<td width="13%" align="center">
+							<input type="radio" name="type{{i}}" ngModel="{{composition.type}}" value="Accompagnement" #accompagnement="ngModel" [id]="'accompagnement' + i" class="width99" />
 						</td>
-						<td align="center">
-							<input type="radio" name="type{{i}}" ngModel="{{composition.type}}" value="Isole" #isole="ngModel" [id]="'isole' + i"/>
+						<td width="6%" align="center">
+							<input type="radio" name="type{{i}}" ngModel="{{composition.type}}" value="Isole" #isole="ngModel" [id]="'isole' + i" class="width99" />
 						</td>	
 					</tr>
 					</tbody>
@@ -46,6 +46,6 @@
 		</form>
 	</div>
 	<div class="gauche divWithScroll">
-		<pdf-viewer src="http://localhost:8089/ocr/services/rest/traitement/getpdf?pdfName={{currentItem.pdfFileName}}" zoom="1.3"></pdf-viewer>
+		<pdf-viewer src="{{myConfig.protocol}}://{{myConfig.server}}:{{myConfig.port}}/ocr/services/rest/traitement/getpdf?pdfName={{currentItem.pdfFileName}}" zoom="1.3"></pdf-viewer>
 	</div>
 </div>
