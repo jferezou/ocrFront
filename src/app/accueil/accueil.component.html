@@ -1,2 +1,22 @@
-<button [routerLink]="['traitementT1']">{{myConfig.boutontraitement1}}</button>
-<button [routerLink]="['traitementT2']">{{myConfig.boutontraitement2}}</button>
+<div class="accueildiv">
+	<div class="title">
+		<h1 class="h1Style">
+			<span>
+				{{myConfig.titre}}
+			</span>
+		</h1>
+	</div>
+	<img src="assets/img/abeille.jpg" />
+	<br/>
+	<br/>
+	<button [routerLink]="['traitementT1']" class="styleBouton">{{myConfig.boutontraitement1}}</button>
+	<div class="divider"></div>
+	<button [routerLink]="['traitementT2']" class="styleBouton">{{myConfig.boutontraitement2}}</button>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div id="footer">
+       &copy; All rights reserved
+	</div>
+</div>

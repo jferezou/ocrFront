@@ -1,7 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-.accueilbouton{
-	margin: 20px;
-}
 .vert{
 	color: limegreen;	
 }
@@ -49,9 +46,6 @@
     overflow-x:hidden;
 }
 
-.myButton {
-	text-align: center;
-}
 .percentage {
     width: 100px;
 }
@@ -64,4 +58,39 @@
 
 .bleu{
 	color: DarkBlue ;
+}
+
+
+.styleBouton {
+	padding: 10px;
+    border-radius: 2px;
+    box-shadow: 3px 3px 12px #999;
+    background: #DAA520;
+    font: bold 15px Arial;
+    color: #555;
+	margin-bottom: 10px;
+}
+
+.accueildiv{
+	width:100%;
+	text-align: center;
+}
+.divider{
+    width:50px;
+    height:auto;
+    display:inline-block;
+	padding-top: 5%;
+}
+
+.h1Style
+{
+  font-size: 50px;
+  line-height: 150px;
+  text-shadow: -1px -1px #fb6, 1px 1px #d60, -3px 0 4px #000;
+  font-family:"Segoe print", Arial, Helvetica, sans-serif;
+  color: #FF9933; 
+  padding:32px;
+  font-weight:lighter;
+  text-align:center;
+  display:inline;
 }
