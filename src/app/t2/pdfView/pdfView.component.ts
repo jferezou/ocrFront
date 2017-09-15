@@ -10,16 +10,23 @@ import {config} from '../../configuration';
   styleUrls: ['./pdfview.component.css']
 })
 export class PdfViewComponentT2 implements OnChanges {
-	@Input() currentItem: string;
+	@Input() currentId: string;
 	@Output() validateEnregistrer : EventEmitter<boolean> = new EventEmitter<boolean>();
 	myConfig = config;
+	currentItem: string;
   
-	private saveUrl ="http://localhost:8089/ocr/services/rest/traitement/savet2";
+	private saveUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/savet2";
+	private getUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/gett2";
   constructor(private http: Http) {}
 
   ngOnChanges(changes: SimpleChanges) {
         console.log('onChange fired');
-		this.currentItem=changes.currentItem.currentValue;
+		this.currentId = changes.currentId.currentValue;
+		// Make the HTTP request:
+		this.http.get(this.getUrl+ "?id="+this.currentId).subscribe(data => {
+		  // Read the result field from the JSON response.
+		  this.currentItem = data.json();
+		});
     }
 		
 		

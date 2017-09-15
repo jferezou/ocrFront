@@ -3,7 +3,7 @@
 	<div class="globalApp">
 		<div class ="gaucheApp">
 			<select [(ngModel)]="selectedPdf" size="10" (change)="onChange($event)">
-				<option *ngFor="let item of resultat.resultats" [value]="item.id" [ngClass]="{'vert': item.enregistre==true}">
+				<option *ngFor="let item of resultat.resultats" [value]="item.id" [ngClass]="{'vert': item.valider==true}">
 					{{ item.pdfFilePath }}
 				</option>
 			</select>
@@ -12,8 +12,8 @@
 			<a href="{{csvUrl}}">{{myConfig.exportercsv}}</a>
 		</div>
 	</div>
-	<div class="global">
-		<mypdfview2 [currentItem]="currentItem" (validateEnregistrer)="passerVert($event)"></mypdfview2>
+	<div *ngIf="currentItem !== undefined" class="global">
+		<mypdfview2 [currentId]="currentItem.id" (validateEnregistrer)="passerVert($event)"></mypdfview2>
 	</div>
 </div>
 <div *ngIf="resultat === undefined">

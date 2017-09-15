@@ -17,6 +17,7 @@
 					</tr>			
 				  <tbody>
 					<tr *ngFor="let composition of currentItem.gmsList; let i = index;">
+						<input type="hidden" #value="ngModel" [id]="'tracegms' + i" name="tracegms{{i}}" ngModel="{{composition.trace}}" />
 						<td width="80%">
 							<input type="text" name="valuegms{{i}}" ngModel="{{composition.value}}" #value="ngModel" [id]="'valuegms' + i" [ngClass]="{'bleu' : composition.trace === true, 'texte' : true, 'width99' : true}"/>
 						</td>
@@ -36,6 +37,7 @@
 					</tr>			
 				  <tbody>
 					<tr *ngFor="let composition of currentItem.lmsList; let i = index;">
+						<input type="hidden" #value="ngModel" [id]="'tracelms' + i" name="tracelms{{i}}" ngModel="{{composition.trace}}" />
 						<td width="80%">
 							<input type="text" name="valuelms{{i}}" ngModel="{{composition.value}}" #value="ngModel" [id]="'valuelms' + i" [ngClass]="{'bleu' : composition.trace === true, 'texte' : true, 'width99' : true}"/>
 						</td>

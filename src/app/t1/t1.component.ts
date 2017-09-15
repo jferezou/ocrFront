@@ -51,7 +51,7 @@ export class T1Component implements OnInit {
 		}
   }
   passerVert(evt){
-    this.currentItem.enregistre = true;
+    this.currentItem.valider = true;
   }
   exporterCsv(event) {
     this.http.get(this.csvUrl).subscribe(data => {});

@@ -19,6 +19,7 @@
 					</tr>			
 				  <tbody>
 					<tr *ngFor="let composition of currentItem.compositions; let i = index;">
+						<input type="hidden" #value="ngModel" [id]="'valid' + i" name="valid{{i}}" ngModel="{{composition.valid}}" />
 						<td width="50%">
 							<input type="text" name="nomcomposition{{i}}" ngModel="{{composition.value}}" #nomcomposition="ngModel" [id]="'nomcomposition' + i" [ngClass]="{'rouge' : composition.valid === false,'width99' : true}"/>
 						</td>

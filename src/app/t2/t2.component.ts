@@ -32,6 +32,7 @@ export class T2Component implements OnInit {
     this.http.get(this.apiUrl).subscribe(data => {
       // Read the result field from the JSON response.
       this.resultat = data.json();
+	  var tutu = this.resultat.resultats;
 	  this.currentItem = undefined;
     });	
 	
@@ -54,7 +55,7 @@ export class T2Component implements OnInit {
 		}
   }
   passerVert(evt){
-    this.currentItem.enregistre = true;
+    this.currentItem.valider = true;
   }
   exporterCsv(event) {
     this.http.get(this.csvUrl).subscribe(data => {});
