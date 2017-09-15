@@ -28,13 +28,23 @@ export class PdfViewComponent implements OnChanges {
 		  this.currentItem = data.json();
 		});
     }
-		
-		
+	
+	private handleError (error: Response | any) {
+		var myException = JSON.parse(error._body);
+		alert(myException.exception);
+    }	
+	
 	public onSubmit(f: NgForm) {
 		const body = JSON.stringify(f.value); 
+		this.postItemsWithPromise(body);
+	}
+	
+	private postItemsWithPromise(body : String): Promise<void> {
 		var headers = new Headers();
 		headers.append('Content-Type', 'application/json');
-		this.http.post(this.saveUrl, body,{headers: headers}).subscribe(r=>{});
-		this.validateEnregistrer.emit(true);
-	}
+        return this.http.post(this.saveUrl, body,{headers: headers})
+			.toPromise()
+		    .then((response) => {this.validateEnregistrer.emit(true)})
+			.catch(this.handleError);
+    }
 }

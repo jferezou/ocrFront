@@ -3,6 +3,8 @@ import { Component, Input, Output, EventEmitter, ViewChildren, OnChanges, Simple
 import { NgForm } from '@angular/forms';
 import { Http, Response, Headers } from '@angular/http';
 import {config} from '../../configuration';
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/catch';
  
 @Component({
   selector: 'mypdfview2',
@@ -28,13 +30,23 @@ export class PdfViewComponentT2 implements OnChanges {
 		  this.currentItem = data.json();
 		});
     }
-		
-		
+	
+	private handleError (error: Response | any) {
+		var myException = JSON.parse(error._body);
+		alert(myException.exception);
+    }	
+	
 	public onSubmit(f: NgForm) {
 		const body = JSON.stringify(f.value); 
+		this.postItemsWithPromise(body);
+	}
+	
+	private postItemsWithPromise(body : String): Promise<void> {
 		var headers = new Headers();
 		headers.append('Content-Type', 'application/json');
-		this.http.post(this.saveUrl, body,{headers: headers}).subscribe(r=>{});
-		this.validateEnregistrer.emit(true);
-	}
+        return this.http.post(this.saveUrl, body,{headers: headers})
+			.toPromise()
+		    .then((response) => {this.validateEnregistrer.emit(true)})
+			.catch(this.handleError);
+    }
 }
