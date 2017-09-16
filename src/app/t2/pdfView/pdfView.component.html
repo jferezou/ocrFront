@@ -1,6 +1,9 @@
 <br/>
 <div *ngIf="currentItem !== undefined">
 	<div class="droite">
+		
+		<div *ngIf="validerOk !== undefined" class="vert">{{ validerOk }}</div>
+		<div *ngIf="validerKo !== undefined" class="rouge">{{ validerKo }}</div>
 		<form #f="ngForm" (ngSubmit)="onSubmit(f)">
 			<br/>
 			<div>

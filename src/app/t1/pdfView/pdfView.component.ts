@@ -14,6 +14,8 @@ export class PdfViewComponent implements OnChanges {
 	@Output() validateEnregistrer : EventEmitter<boolean> = new EventEmitter<boolean>();
 	myConfig = config;
 	currentItem: string;
+	validerKo;
+	validerOk;
   
 	private saveUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/save";
 	private getUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/gett1";
@@ -22,17 +24,14 @@ export class PdfViewComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges) {
         console.log('onChange fired');
 		this.currentId = changes.currentId.currentValue;
+		this.validerKo = undefined;
+		this.validerOk = undefined;	
 		// Make the HTTP request:
 		this.http.get(this.getUrl+ "?id="+this.currentId).subscribe(data => {
 		  // Read the result field from the JSON response.
 		  this.currentItem = data.json();
 		});
     }
-	
-	private handleError (error: Response | any) {
-		var myException = JSON.parse(error._body);
-		alert(myException.exception);
-    }	
 	
 	public onSubmit(f: NgForm) {
 		const body = JSON.stringify(f.value); 
@@ -44,7 +43,15 @@ export class PdfViewComponent implements OnChanges {
 		headers.append('Content-Type', 'application/json');
         return this.http.post(this.saveUrl, body,{headers: headers})
 			.toPromise()
-		    .then((response) => {this.validateEnregistrer.emit(true)})
-			.catch(this.handleError);
+		    .then((response) => {
+					this.validateEnregistrer.emit(true);
+					this.validerKo = undefined;
+					this.validerOk = "Bien enregistré !";
+				})
+			.catch((error) => {
+					var myException = error._body;
+					this.validerKo = myException;
+					this.validerOk = undefined;		
+				});
     }
 }
