@@ -22,5 +22,5 @@
   lms: "LMS - LC-MSMS - Primoris accredited",
   t2mult: "2",
   t1mult: "8",
-  titre: "Abeilles et miel extracteur !"
+  titre: "Infos abeilles extracteur !"
 }
