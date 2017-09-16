@@ -68,6 +68,21 @@
 	margin-bottom: 10px;
 }
 
+.styleBoutonAjouterLigne {
+    background-color: rgb(120, 146, 194);
+    border-radius: 28px;
+    border: 1px solid rgb(78, 96, 150);
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-family: Arial;
+    font-size: 13px;
+    padding: 7px 7px;
+    text-decoration: none;
+    margin-left: 2%;
+    text-shadow: rgb(40, 57, 102) 0px 1px 0px;
+}
+
 .accueildiv{
 	width:100%;
 	text-align: center;

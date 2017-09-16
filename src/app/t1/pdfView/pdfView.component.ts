@@ -13,7 +13,7 @@ export class PdfViewComponent implements OnChanges {
 	@Input() currentId: string;
 	@Output() validateEnregistrer : EventEmitter<boolean> = new EventEmitter<boolean>();
 	myConfig = config;
-	currentItem: string;
+	currentItem;
 	validerKo;
 	validerOk;
   
@@ -53,5 +53,8 @@ export class PdfViewComponent implements OnChanges {
 					this.validerKo = myException;
 					this.validerOk = undefined;		
 				});
+    }
+	addRow() {
+      this.currentItem.compositions.push({value:"",percentage:0,type:"Isole",valid:true});
     }
 }

@@ -15,7 +15,7 @@ export class PdfViewComponentT2 implements OnChanges {
 	@Input() currentId: string;
 	@Output() validateEnregistrer : EventEmitter<boolean> = new EventEmitter<boolean>();
 	myConfig = config;
-	currentItem: string;
+	currentItem;
 	validerKo;
 	validerOk;
   
@@ -55,5 +55,12 @@ export class PdfViewComponentT2 implements OnChanges {
 					this.validerKo = myException;
 					this.validerOk = undefined;		
 				});
+    }
+	
+	addGmsRow() {
+      this.currentItem.gmsList.push({trace:false,value:"",pourcentage:0.0});
+    }
+	addLmsRow() {
+      this.currentItem.lmsList.push({trace:false,value:"",pourcentage:0.0});
     }
 }

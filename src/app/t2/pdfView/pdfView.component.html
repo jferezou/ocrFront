@@ -12,6 +12,7 @@
 				<input type="text" #enchatillon="ngModel" id="reference" name="reference" ngModel="{{currentItem.reference}}" class="echantillon"/>
 				<div class="t2titre">
 					{{myConfig.gms}}
+					<button type="button" (click)="addGmsRow()" class="styleBoutonAjouterLigne">{{myConfig.ajouterligne}}</button>
 				</div>
 				<table style="width:100%">
 					<tr>
@@ -32,6 +33,7 @@
 				</table>
 				<div class="t2titre">
 					{{myConfig.lms}}
+					<button type="button" (click)="addLmsRow()" class="styleBoutonAjouterLigne">{{myConfig.ajouterligne}}</button>
 				</div>
 				<table style="width:100%">
 					<tr>
