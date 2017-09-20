@@ -17,8 +17,8 @@ export class PdfViewComponent implements OnChanges {
 	validerKo;
 	validerOk;
   
-	private saveUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/save";
-	private getUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/gett1";
+	private saveUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/palynologie/save";
+	private getUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/palynologie/get";
   constructor(private http: Http) {}
 
   ngOnChanges(changes: SimpleChanges) {
@@ -27,7 +27,7 @@ export class PdfViewComponent implements OnChanges {
 		this.validerKo = undefined;
 		this.validerOk = undefined;	
 		// Make the HTTP request:
-		this.http.get(this.getUrl+ "?id="+this.currentId).subscribe(data => {
+		this.http.get(this.getUrl+ "/"+this.currentId).subscribe(data => {
 		  // Read the result field from the JSON response.
 		  this.currentItem = data.json();
 		});

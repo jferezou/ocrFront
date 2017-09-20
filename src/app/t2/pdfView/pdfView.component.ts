@@ -19,8 +19,8 @@ export class PdfViewComponentT2 implements OnChanges {
 	validerKo;
 	validerOk;
   
-	private saveUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/savet2";
-	private getUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/gett2";
+	private saveUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/save";
+	private getUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/get";
   constructor(private http: Http) {}
 
   ngOnChanges(changes: SimpleChanges) {
@@ -29,7 +29,7 @@ export class PdfViewComponentT2 implements OnChanges {
 		this.validerKo = undefined;
 		this.validerOk = undefined;		
 		// Make the HTTP request:
-		this.http.get(this.getUrl+ "?id="+this.currentId).subscribe(data => {
+		this.http.get(this.getUrl+ "/"+this.currentId).subscribe(data => {
 		  // Read the result field from the JSON response.
 		  this.currentItem = data.json();
 		});

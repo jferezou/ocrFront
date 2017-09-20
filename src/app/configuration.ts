@@ -4,8 +4,8 @@
   server: "localhost",
   protocol: "http",
   // labels
-  boutontraitement1: "Lancer traitement 1",
-  boutontraitement2: "Lancer traitement 2",
+  boutontraitement1: "Lancer analyse palyno",
+  boutontraitement2: "Lancer analyse résidu",
   exportercsv: "Exporter CSV",
   traitementencours: "Traitement en cours ...",
   tempsestime: "Temps estimé",

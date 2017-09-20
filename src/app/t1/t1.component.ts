@@ -12,8 +12,8 @@ import {config} from '../configuration';
 export class T1Component implements OnInit {
   myConfig = config;
   title = 'app';
-  private apiUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/t1";
-  csvUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/getcsv";
+  private apiUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/palynologie/extraire";
+  csvUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/palynologie/export/csv";
   estimateTimeUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/estimatetime?multiplicateur="+config.t1mult+"&ist1=true";
   resultat;
   currentItem;

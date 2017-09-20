@@ -12,8 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 
 export class T2Component implements OnInit {
   myConfig = config;
-  private apiUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/t2";
-  csvUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/getcsvt2";
+  private apiUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/extraire";
+  csvUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/export/csv";
   estimateTimeUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/estimatetime?multiplicateur="+config.t2mult+"&ist1=false";
   resultat;
   currentItem;
