@@ -3,13 +3,15 @@ import { Component, Input, Output, EventEmitter, ViewChildren, OnChanges, Simple
 import { NgForm } from '@angular/forms';
 import { Http, Response, Headers } from '@angular/http';
 import {config} from '../../configuration';
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/catch';
  
 @Component({
-  selector: 'mypdfview',
+  selector: 'mypdfview2',
   templateUrl: './pdfview.component.html',
   styleUrls: ['./pdfview.component.css']
 })
-export class PdfViewComponent implements OnChanges {
+export class PdfViewComponentResidus implements OnChanges {
 	@Input() currentId: string;
 	@Output() validateEnregistrer : EventEmitter<boolean> = new EventEmitter<boolean>();
 	myConfig = config;
@@ -17,15 +19,15 @@ export class PdfViewComponent implements OnChanges {
 	validerKo;
 	validerOk;
   
-	private saveUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/palynologie/save";
-	private getUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/palynologie/get";
+	private saveUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/save";
+	private getUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/get";
   constructor(private http: Http) {}
 
   ngOnChanges(changes: SimpleChanges) {
         console.log('onChange fired');
 		this.currentId = changes.currentId.currentValue;
 		this.validerKo = undefined;
-		this.validerOk = undefined;	
+		this.validerOk = undefined;		
 		// Make the HTTP request:
 		this.http.get(this.getUrl+ "/"+this.currentId).subscribe(data => {
 		  // Read the result field from the JSON response.
@@ -54,7 +56,11 @@ export class PdfViewComponent implements OnChanges {
 					this.validerOk = undefined;		
 				});
     }
-	addRow() {
-      this.currentItem.compositions.push({value:"",percentage:0,type:"Isole",valid:true});
+	
+	addGmsRow() {
+      this.currentItem.gmsList.push({trace:false,value:"",pourcentage:0.0});
+    }
+	addLmsRow() {
+      this.currentItem.lmsList.push({trace:false,value:"",pourcentage:0.0});
     }
 }

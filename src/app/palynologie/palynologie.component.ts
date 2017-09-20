@@ -5,11 +5,11 @@ import 'rxjs/add/operator/map';
 import {config} from '../configuration';
 
 @Component({
-  templateUrl: './t1.component.html',
-  styleUrls: ['./t1.component.css']
+  templateUrl: './palynologie.component.html',
+  styleUrls: ['./palynologie.component.css']
 })
 
-export class T1Component implements OnInit {
+export class Palynologie implements OnInit {
   myConfig = config;
   title = 'app';
   private apiUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/palynologie/extraire";

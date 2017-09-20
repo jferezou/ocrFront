@@ -6,11 +6,11 @@ import {config} from '../configuration';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  templateUrl: './t2.component.html',
-  styleUrls: ['./t2.component.css']
+  templateUrl: './residus.component.html',
+  styleUrls: ['./residus.component.css']
 })
 
-export class T2Component implements OnInit {
+export class Residus implements OnInit {
   myConfig = config;
   private apiUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/extraire";
   csvUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/export/csv";

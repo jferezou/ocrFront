@@ -5,23 +5,23 @@ import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 
-import { T1Component } from './t1/t1.component';
-import { T2Component } from './t2/t2.component';
+import { Palynologie } from './palynologie/palynologie.component';
+import { Residus } from './residus/residus.component';
 import { Accueil } from './accueil/accueil.component';
 import { AppComponent } from './app.component';
-import { PdfViewComponent } from './t1/pdfView/pdfView.component';
-import { PdfViewComponentT2 } from './t2/pdfView/pdfView.component';
+import { PdfViewComponentPalynologie } from './palynologie/pdfView/pdfView.component';
+import { PdfViewComponentResidus } from './residus/pdfView/pdfView.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: '', component: Accueil },
-  { path: 'traitementT1', component: T1Component },
-  { path: 'traitementT2', component: T2Component },
+  { path: 'palynologie', component: Palynologie },
+  { path: 'residus', component: Residus },
  ];
 
 @NgModule({
   declarations: [
-    AppComponent, PdfViewerComponent, PdfViewComponent, PdfViewComponentT2, T1Component, T2Component, Accueil
+    AppComponent, PdfViewerComponent, PdfViewComponentPalynologie, PdfViewComponentResidus, Palynologie, Residus, Accueil
   ],
   imports: [
   RouterModule.forRoot(
