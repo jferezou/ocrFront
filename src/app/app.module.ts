@@ -7,6 +7,7 @@ import { PdfViewerComponent } from 'ng2-pdf-viewer';
 
 import { Palynologie } from './palynologie/palynologie.component';
 import { Residus } from './residus/residus.component';
+import { AggregationResidus } from './residus/aggregation/aggregation.component';
 import { Accueil } from './accueil/accueil.component';
 import { AppComponent } from './app.component';
 import { PdfViewComponentPalynologie } from './palynologie/pdfView/pdfView.component';
@@ -17,11 +18,12 @@ const appRoutes: Routes = [
   { path: '', component: Accueil },
   { path: 'palynologie', component: Palynologie },
   { path: 'residus', component: Residus },
+  { path: 'aggregationResidus', component: AggregationResidus },  
  ];
 
 @NgModule({
   declarations: [
-    AppComponent, PdfViewerComponent, PdfViewComponentPalynologie, PdfViewComponentResidus, Palynologie, Residus, Accueil
+    AppComponent, PdfViewerComponent, PdfViewComponentPalynologie, PdfViewComponentResidus, Palynologie, Residus, AggregationResidus, Accueil
   ],
   imports: [
   RouterModule.forRoot(

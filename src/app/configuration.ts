@@ -6,6 +6,7 @@
   // labels
   boutontraitementpalynologie: "Lancer analyse palyno",
   boutontraitementresidus: "Lancer analyse résidu",
+  boutontraitementaggregationresidus: "Télécharger pdf résidus aggrégés",
   exportercsv: "Exporter CSV",
   traitementencours: "Traitement en cours ...",
   tempsestime: "Temps estimé",

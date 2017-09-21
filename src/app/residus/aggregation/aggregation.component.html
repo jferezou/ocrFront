@@ -1,0 +1,18 @@
+<button [routerLink]="['']" class="styleBouton"> Retour accueil</button>
+<div *ngIf="resultat !== undefined"> 
+</div>
+<div *ngIf="resultat === undefined">
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	{{myConfig.traitementencours}}
+	<br/>
+	<br/>
+	<div *ngIf="estimateTime !== undefined">
+		{{myConfig.tempsestime}} : {{ estimateTime }} min
+		<br/>
+		{{myConfig.dateestime}} : {{ estimateDate }}
+	</div>
+</div>
+
