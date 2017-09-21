@@ -14,7 +14,7 @@ export class Palynologie implements OnInit {
   title = 'app';
   private apiUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/palynologie/extraire";
   csvUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/palynologie/export/csv";
-  estimateTimeUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/estimatetime?multiplicateur="+config.t1mult+"&ist1=true";
+  estimateTimeUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/estimatetime?multiplicateur="+config.t1mult+"&isPalynologie=true";
   resultat;
   currentItem;
   selectedPdf;

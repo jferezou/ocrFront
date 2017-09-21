@@ -14,7 +14,7 @@ export class Residus implements OnInit {
   myConfig = config;
   private apiUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/extraire";
   csvUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/export/csv";
-  estimateTimeUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/estimatetime?multiplicateur="+config.t2mult+"&ist1=false";
+  estimateTimeUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/estimatetime?multiplicateur="+config.t2mult+"&isPalynologie=false";
   resultat;
   currentItem;
   selectedPdf;
