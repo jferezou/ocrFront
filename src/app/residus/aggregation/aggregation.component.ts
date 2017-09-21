@@ -20,9 +20,7 @@ export class AggregationResidus implements OnInit {
   
   ngOnInit(): void {  
     // Make the HTTP request:
-    this.http.get(this.apiUrl).subscribe(data => {
-      this.resultat = "";
-	  });	
+    this.http.get(this.apiUrl).subscribe(data => {});	
 	
     this.http.get(this.estimateTimeUrl).subscribe(data => {
       // Read the result field from the JSON response.
