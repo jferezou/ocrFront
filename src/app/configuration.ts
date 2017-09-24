@@ -24,5 +24,6 @@
   t2mult: "2",
   t1mult: "8",
   titre: "Infos abeilles extracteur !",
-  ajouterligne: "Ajouter une ligne"
+  ajouterligne: "Ajouter une ligne",
+  trace: "Trace"
 }
