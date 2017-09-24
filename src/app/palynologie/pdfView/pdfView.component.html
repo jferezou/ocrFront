@@ -24,7 +24,7 @@
 					<tr *ngFor="let composition of currentItem.compositions; let i = index;">
 						<input type="hidden" #value="ngModel" [id]="'valid' + i" name="valid{{i}}" ngModel="{{composition.valid}}" />
 						<td width="50%">
-							<input type="text" name="nomcomposition{{i}}" ngModel="{{composition.value}}" #nomcomposition="ngModel" [id]="'nomcomposition' + i" [ngClass]="{'rouge' : composition.valid === false,'width99' : true}"/>
+							<input list="fleurs" name="nomcomposition{{i}}" ngModel="{{composition.value}}" #nomcomposition="ngModel" [id]="'nomcomposition' + i" [ngClass]="{'rouge' : composition.valid === false,'width99' : true}"/>
 						</td>
 						<td width="20%">
 							<input type="text" name="pourcentage{{i}}" ngModel="{{composition.percentage}}" #pourcentage="ngModel" [id]="'pourcentage' + i" class="width99"/>		
@@ -41,6 +41,9 @@
 					</tr>
 					</tbody>
 				</table>
+				<datalist id="fleurs">
+					<option *ngFor="let item of currentItem.fleurs" [value]="item">
+				</datalist>
 			</div>
 			<br/>
 			<br/>

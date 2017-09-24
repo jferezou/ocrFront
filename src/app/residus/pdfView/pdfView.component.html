@@ -23,7 +23,7 @@
 				  <tbody>
 					<tr *ngFor="let composition of currentItem.gmsList; let i = index;">
 						<td width="75%">
-							<input type="text" name="valuegms{{i}}" ngModel="{{composition.value}}" #value="ngModel" [id]="'valuegms' + i" [ngClass]="{'rouge' : composition.erreur === true,'bleu' : composition.erreur === false && composition.trace === true, 'texte' : true, 'width99' : true}"/>
+							<input list="gmsList" name="valuegms{{i}}" ngModel="{{composition.value}}" #value="ngModel" [id]="'valuegms' + i" [ngClass]="{'rouge' : composition.erreur === true,'bleu' : composition.erreur === false && composition.trace === true, 'texte' : true, 'width99' : true}"/>
 						</td>
 						<td width="20%">
 							<input type="text" name="pourcentagegms{{i}}" ngModel="{{composition.pourcentage}}" #pourcentage="ngModel" [id]="'pourcentagegms' + i" class="percentage width99"/>		
@@ -33,7 +33,10 @@
 						</td>
 					</tr>
 					</tbody>
-				</table>
+				</table>				
+				<datalist id="gmsList">
+					<option *ngFor="let item of currentItem.gmsDataList" [value]="item.title">{{item.value}}</option>
+				</datalist>
 				<div class="t2titre">
 					{{myConfig.lms}}
 					<button type="button" (click)="addLmsRow()" class="styleBoutonAjouterLigne">{{myConfig.ajouterligne}}</button>
@@ -47,7 +50,7 @@
 				  <tbody>
 					<tr *ngFor="let composition of currentItem.lmsList; let i = index;">
 						<td width="80%">
-							<input type="text" name="valuelms{{i}}" ngModel="{{composition.value}}" #value="ngModel" [id]="'valuelms' + i" [ngClass]="{'rouge' : composition.erreur === true,'bleu' : composition.erreur === false && composition.trace === true, 'texte' : true, 'width99' : true}"/>
+							<input list="lmsList" name="valuelms{{i}}" ngModel="{{composition.value}}" #value="ngModel" [id]="'valuelms' + i" [ngClass]="{'rouge' : composition.erreur === true,'bleu' : composition.erreur === false && composition.trace === true, 'texte' : true, 'width99' : true}"/>
 						</td>
 						<td width="20%">
 							<input type="text" name="pourcentagelms{{i}}" ngModel="{{composition.pourcentage}}" #pourcentage="ngModel" [id]="'pourcentagelms' + i" class="percentage"  class="width99"/>		
@@ -57,7 +60,10 @@
 						</td>
 					</tr>
 					</tbody>
-				</table>
+				</table>		
+				<datalist id="lmsList">
+					<option *ngFor="let item of currentItem.lmsDataList" [value]="item.title">{{item.value}}</option>
+				</datalist>
 			</div>
 			<br/>
 			<br/>
