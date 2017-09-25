@@ -122,3 +122,12 @@ th {
 .width99 {
 	width: 99%;
 }
+.poids {
+    width: 50px;
+	margin-top: 5px;
+}
+
+.certificatAnalyses{	
+    width: 100px;
+	margin-top: 5px;
+}

@@ -10,6 +10,12 @@
 				<input type="hidden" #id="ngModel" id="enchatillon" name="id" ngModel="{{currentItem.id}}" />
 				{{myConfig.reference}} :
 				<input type="text" #enchatillon="ngModel" id="reference" name="reference" ngModel="{{currentItem.reference}}" class="echantillon"/>
+				<br/>
+				{{myConfig.poids}} :
+				<input type="text" #enchatillon="ngModel" id="poids" name="poids" ngModel="{{currentItem.poids}}" class="poids"/>
+				<br/>
+				{{myConfig.certificatAnalyse}} :
+				<input type="text" #enchatillon="ngModel" id="certificatAnalyses" name="certificatAnalyses" ngModel="{{currentItem.certificatAnalyses}}" class="certificatAnalyses"/>
 				<div class="t2titre">
 					{{myConfig.gms}}
 					<button type="button" (click)="addGmsRow()" class="styleBoutonAjouterLigne">{{myConfig.ajouterligne}}</button>

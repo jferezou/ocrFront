@@ -25,5 +25,7 @@
   t1mult: "8",
   titre: "Infos abeilles extracteur !",
   ajouterligne: "Ajouter une ligne",
-  trace: "Trace"
+  trace: "Trace",
+  poids: "Poids",
+  certificatAnalyse: "Certificat d'analyses"
 }
