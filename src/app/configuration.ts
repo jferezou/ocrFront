@@ -27,5 +27,6 @@
   ajouterligne: "Ajouter une ligne",
   trace: "Trace",
   poids: "Poids",
-  certificatAnalyse: "Certificat d'analyses"
+  certificatAnalyse: "Certificat d'analyses",
+  appelation: "Appelation demandeur"
 }

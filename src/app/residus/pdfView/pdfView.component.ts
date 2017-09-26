@@ -36,7 +36,7 @@ export class PdfViewComponentResidus implements OnChanges {
     }
 	
 	public onSubmit(f: NgForm) {
-		const body = JSON.stringify(f.value); 
+		const body = JSON.stringify(f.value.replace(":","ceciestundeuxpoints")); 
 		this.postItemsWithPromise(body);
 	}
 	

@@ -6,9 +6,12 @@
 		<form #f="ngForm" (ngSubmit)="onSubmit(f)">
 			<br/>
 			<div>
-				<input type="hidden" #id="ngModel" id="enchatillon" name="id" ngModel="{{currentItem.id}}" />
+				<input type="hidden" #id="ngModel" id="id" name="id" ngModel="{{currentItem.id}}" />
 				{{myConfig.echantillon}} :
-				<input type="text" #enchatillon="ngModel" id="enchatillon" name="echantillon" ngModel="{{currentItem.echantillon}}" class="echantillon"/>
+				<input type="text" #echantillon="ngModel" id="echantillon" name="echantillon" ngModel="{{currentItem.echantillon}}" class="echantillon"/>
+				<br/>
+				{{myConfig.appelation}} :
+				<input type="text" #appelationDemandeur="ngModel" id="appelationDemandeur" name="appelationDemandeur" ngModel="{{currentItem.appelationDemandeur}}" class="echantillon"/>
 				<button type="button" (click)="addRow()" class="styleBoutonAjouterLigne">{{myConfig.ajouterligne}}</button>
 				<br/>
 				<br/>
