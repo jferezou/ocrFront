@@ -27,7 +27,7 @@
 						<th width="5%">{{myConfig.trace}}</th> 
 					</tr>			
 				  <tbody>
-					<tr *ngFor="let composition of currentItem.gmsList; let i = index;">
+					<tr *ngFor="let composition of currentItem.moleculesGms; let i = index;">
 						<td width="75%">
 							<input list="gmsList" name="valuegms{{i}}" ngModel="{{composition.value}}" #value="ngModel" [id]="'valuegms' + i" [ngClass]="{'rouge' : composition.erreur === true,'bleu' : composition.erreur === false && composition.trace === true, 'texte' : true, 'width99' : true}"/>
 						</td>
@@ -41,7 +41,7 @@
 					</tbody>
 				</table>				
 				<datalist id="gmsList">
-					<option *ngFor="let item of currentItem.gmsDataList" [value]="item.title">{{item.value}}</option>
+					<option *ngFor="let item of currentItem.gmsDataList" [value]="item.nom">{{item.valeurTrace}}</option>
 				</datalist>
 				<div class="t2titre">
 					{{myConfig.lms}}
@@ -54,7 +54,7 @@
 						<th width="5%">{{myConfig.trace}}</th> 
 					</tr>			
 				  <tbody>
-					<tr *ngFor="let composition of currentItem.lmsList; let i = index;">
+					<tr *ngFor="let composition of currentItem.moleculesLms; let i = index;">
 						<td width="80%">
 							<input list="lmsList" name="valuelms{{i}}" ngModel="{{composition.value}}" #value="ngModel" [id]="'valuelms' + i" [ngClass]="{'rouge' : composition.erreur === true,'bleu' : composition.erreur === false && composition.trace === true, 'texte' : true, 'width99' : true}"/>
 						</td>
@@ -68,7 +68,7 @@
 					</tbody>
 				</table>		
 				<datalist id="lmsList">
-					<option *ngFor="let item of currentItem.lmsDataList" [value]="item.title">{{item.value}}</option>
+					<option *ngFor="let item of currentItem.lmsDataList" [value]="item.nom">{{item.valeurTrace}}</option>
 				</datalist>
 			</div>
 			<br/>
