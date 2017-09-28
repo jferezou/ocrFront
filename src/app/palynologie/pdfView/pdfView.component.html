@@ -7,6 +7,7 @@
 			<br/>
 			<div>
 				<input type="hidden" #id="ngModel" id="id" name="id" ngModel="{{currentItem.id}}" />
+				<input type="hidden" #pdfName="ngModel" id="pdfName" name="pdfName" ngModel="{{currentItem.pdfFileName}}" />
 				{{myConfig.echantillon}} :
 				<input type="text" #echantillon="ngModel" id="echantillon" name="echantillon" ngModel="{{currentItem.echantillon}}" class="echantillon"/>
 				<br/>

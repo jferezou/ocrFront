@@ -7,7 +7,8 @@
 		<form #f="ngForm" (ngSubmit)="onSubmit(f)">
 			<br/>
 			<div>
-				<input type="hidden" #id="ngModel" id="enchatillon" name="id" ngModel="{{currentItem.id}}" />
+				<input type="hidden" #id="ngModel" id="id" name="id" ngModel="{{currentItem.id}}" />
+				<input type="hidden" #pdfName="ngModel" id="pdfName" name="pdfName" ngModel="{{currentItem.pdfName}}" />
 				{{myConfig.reference}} :
 				<input type="text" #enchatillon="ngModel" id="reference" name="reference" ngModel="{{currentItem.reference}}" class="echantillon"/>
 				<br/>
