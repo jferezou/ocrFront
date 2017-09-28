@@ -58,9 +58,9 @@ export class PdfViewComponentResidus implements OnChanges {
     }
 	
 	addGmsRow() {
-      this.currentItem.gmsList.push({trace:false,value:"",pourcentage:0.0});
+      this.currentItem.moleculesGms.push({trace:false,value:"",pourcentage:0.0});
     }
 	addLmsRow() {
-      this.currentItem.lmsList.push({trace:false,value:"",pourcentage:0.0});
+      this.currentItem.moleculesLms.push({trace:false,value:"",pourcentage:0.0});
     }
 }
