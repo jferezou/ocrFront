@@ -13,7 +13,6 @@ export class Palynologie implements OnInit {
   myConfig = config;
   title = 'app';
   private apiUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/palynologie/extraire";
-  csvUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/palynologie/export/csv";
   estimateTimeUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/estimatetime?multiplicateur="+config.t1mult+"&isPalynologie=true";
   resultat;
   currentItem;
@@ -53,7 +52,5 @@ export class Palynologie implements OnInit {
   passerVert(evt){
     this.currentItem.valider = true;
   }
-  exporterCsv(event) {
-    this.http.get(this.csvUrl).subscribe(data => {});
-  }
+
 }

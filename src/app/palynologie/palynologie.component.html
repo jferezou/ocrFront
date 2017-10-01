@@ -7,10 +7,7 @@
 					{{ item.pdfFilePath }}
 				</option>
 			</select>
-		</div>	
-		<div class="droiteApp">
-			<a href="{{csvUrl}}">{{myConfig.exportercsv}}</a>
-		</div>
+		</div>			
 	</div>
 	<div *ngIf="currentItem !== undefined" class="global">
 		<mypdfview [currentId]="currentItem.id" (validateEnregistrer)="passerVert($event)"></mypdfview>

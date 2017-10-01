@@ -13,7 +13,6 @@ import { ActivatedRoute } from '@angular/router';
 export class Residus implements OnInit {
   myConfig = config;
   private apiUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/extraire";
-  csvUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/export/csv";
   estimateTimeUrl =config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/traitement/estimatetime?multiplicateur="+config.t2mult+"&isPalynologie=false";
   resultat;
   currentItem;
@@ -56,8 +55,5 @@ export class Residus implements OnInit {
   }
   passerVert(evt){
     this.currentItem.valider = true;
-  }
-  exporterCsv(event) {
-    this.http.get(this.csvUrl).subscribe(data => {});
   }
 }

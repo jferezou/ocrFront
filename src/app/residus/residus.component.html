@@ -8,9 +8,6 @@
 				</option>
 			</select>
 		</div>	
-		<div class="droiteApp">
-			<a href="{{csvUrl}}">{{myConfig.exportercsv}}</a>
-		</div>
 	</div>
 	<div *ngIf="currentItem !== undefined" class="global">
 		<mypdfview2 [currentId]="currentItem.id" (validateEnregistrer)="passerVert($event)"></mypdfview2>

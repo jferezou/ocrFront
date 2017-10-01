@@ -12,5 +12,7 @@ import {config} from '../configuration';
 export class Accueil {
 	myConfig = config;	
     aggregationUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/pdf/aggregate";
+	csvResidusUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/residus/export/csv";
+    csvPalynologieUrl = config.protocol+"://"+config.server+":"+config.port+"/ocr/services/rest/palynologie/export/csv";
 }
 

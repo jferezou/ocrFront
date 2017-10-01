@@ -28,5 +28,7 @@
   trace: "Trace",
   poids: "Poids",
   certificatAnalyse: "Certificat d'analyses",
-  appelation: "Appelation demandeur"
+  appelation: "Appelation demandeur",
+  boutontraitementcsvresidus: "Télécharger CSV résidus",
+  boutontraitementcsvpalyno: "Télécharger CSV palynologie"
 }
