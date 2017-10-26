@@ -26,6 +26,7 @@
   titre: "Infos abeilles extracteur !",
   ajouterligne: "Ajouter une ligne",
   trace: "Trace",
+  limite: "Limites",
   poids: "Poids",
   certificatAnalyse: "Certificat d'analyses",
   appelation: "Appelation demandeur",

@@ -24,7 +24,8 @@
 				<table style="width:100%">
 					<tr>
 						<th width="5%">{{myConfig.nom}}</th>
-						<th width="20%">{{myConfig.pourcentage}}</th> 
+						<th width="15%">{{myConfig.pourcentage}}</th> 
+						<th width="5%">{{myConfig.limite}}</th> 
 						<th width="5%">{{myConfig.trace}}</th> 
 					</tr>			
 				  <tbody>
@@ -32,8 +33,11 @@
 						<td width="75%">
 							<input list="gmsList" name="valuegms{{i}}" ngModel="{{composition.value}}" #value="ngModel" [id]="'valuegms' + i" [ngClass]="{'rouge' : composition.erreur === true,'bleu' : composition.erreur === false && composition.trace === true, 'texte' : true, 'width99' : true}"/>
 						</td>
-						<td width="20%">
+						<td width="15%">
 							<input type="text" name="pourcentagegms{{i}}" ngModel="{{composition.pourcentage}}" #pourcentage="ngModel" [id]="'pourcentagegms' + i" class="percentage width99"/>		
+						</td>
+						<td width="5%">
+							<input type="text" name="limitegms{{i}}" ngModel="{{composition.limite}}" #pourcentage="ngModel" [id]="'limitegms' + i" class="percentage width99"/>		
 						</td>
 						<td width="5%">
 							<input type="checkbox" name="tracegms{{i}}" [ngModel]="composition.trace" #trace="ngModel" [id]="'tracegms' + i" class="percentage width99"/>		
@@ -42,7 +46,7 @@
 					</tbody>
 				</table>				
 				<datalist id="gmsList">
-					<option *ngFor="let item of currentItem.gmsDataList" [value]="item.nom">{{item.valeurTrace}}</option>
+					<option *ngFor="let item of currentItem.gmsDataList" [value]="item.nom">
 				</datalist>
 				<div class="t2titre">
 					{{myConfig.lms}}
@@ -51,7 +55,8 @@
 				<table style="width:100%">
 					<tr>
 						<th width="5%">{{myConfig.nom}}</th>
-						<th width="20%">{{myConfig.pourcentage}}</th> 
+						<th width="15%">{{myConfig.pourcentage}}</th> 
+						<th width="5%">{{myConfig.limite}}</th> 
 						<th width="5%">{{myConfig.trace}}</th> 
 					</tr>			
 				  <tbody>
@@ -59,8 +64,11 @@
 						<td width="80%">
 							<input list="lmsList" name="valuelms{{i}}" ngModel="{{composition.value}}" #value="ngModel" [id]="'valuelms' + i" [ngClass]="{'rouge' : composition.erreur === true,'bleu' : composition.erreur === false && composition.trace === true, 'texte' : true, 'width99' : true}"/>
 						</td>
-						<td width="20%">
+						<td width="15%">
 							<input type="text" name="pourcentagelms{{i}}" ngModel="{{composition.pourcentage}}" #pourcentage="ngModel" [id]="'pourcentagelms' + i" class="percentage"  class="width99"/>		
+						</td>
+						<td width="5%">
+							<input type="text" name="limitelms{{i}}" ngModel="{{composition.limite}}" #pourcentage="ngModel" [id]="'limitelms' + i" class="percentage width99"/>		
 						</td>
 						<td width="5%">
 							<input type="checkbox" name="tracelms{{i}}" [ngModel]="composition.trace" #trace="ngModel" [id]="'tracelms' + i" class="percentage width99"/>		
@@ -69,7 +77,7 @@
 					</tbody>
 				</table>		
 				<datalist id="lmsList">
-					<option *ngFor="let item of currentItem.lmsDataList" [value]="item.nom">{{item.valeurTrace}}</option>
+					<option *ngFor="let item of currentItem.lmsDataList" [value]="item.nom">
 				</datalist>
 			</div>
 			<br/>
