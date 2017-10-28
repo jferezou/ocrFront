@@ -52,7 +52,8 @@ export class PdfViewComponentResidus implements OnChanges {
 				})
 			.catch((error) => {
 					var myException = error._body;
-					this.validerKo = myException;
+					var objException = JSON.parse(myException);
+					this.validerKo = objException.message;					
 					this.validerOk = undefined;		
 				});
     }
